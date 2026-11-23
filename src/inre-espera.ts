@@ -6,7 +6,7 @@
  * lienzo. Si algo falla dentro, se retira sola para no dejar la pantalla tapada.
  */
 
-const MARCADORES = ["e2_marcador","e1_marcador","2026111403501386_d23ed4a3c1c4a4ae1c11cbffb4a276a3","cube1"]
+const MARCADORES = ["2026111403501386_d23ed4a3c1c4a4ae1c11cbffb4a276a3","cube1","e1_marcador","e2_marcador"]
 
 /**
  * Cuenta las descargas en curso de archivos del proyecto (assets/ o blobs) para

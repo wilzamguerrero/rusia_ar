@@ -227,6 +227,23 @@ const crearCuboZence = (world: ecs.World, eid: ecs.Eid, tamaño: number, st: Est
   st.materialesCubo = materiales
 }
 
+const obtenerModeloActivo = (obj: any): {activo: any, baseGltf: any} => {
+  const baseGltf = obj?.userData?.gltf?.scene ?? null
+  let ageLod: any = obj?.userData?.ageLodChild ?? null
+  if (ageLod && ageLod.parent !== obj) {
+    ageLod = null
+  }
+  if (!ageLod && Array.isArray(obj?.children)) {
+    for (const child of obj.children) {
+      if (child?.userData?.ageLod === true) {
+        ageLod = child
+        break
+      }
+    }
+  }
+  return {activo: ageLod ?? baseGltf, baseGltf}
+}
+
 const aplicarVisibilidadYEscala = (
   world: ecs.World,
   eid: ecs.Eid,
@@ -243,12 +260,21 @@ const aplicarVisibilidadYEscala = (
     // ni el propio modelo queden bloqueados si el `.glb` termina de bajar después.
     obj.visible = true
     world.three.notifyChanged(obj)
-    const gltfScene = obj.userData?.gltf?.scene
-    if (gltfScene) {
-      gltfScene.visible = visible
-      const s = Math.max(0.001, factor)
-      gltfScene.scale.set(s, s, s)
-      world.three.notifyChanged(gltfScene)
+    const s = Math.max(0.001, factor)
+    obj.userData = obj.userData || {}
+    obj.userData.inreReveal = {visible, scale: s}
+
+    const {activo, baseGltf} = obtenerModeloActivo(obj)
+    if (baseGltf && activo && baseGltf !== activo) {
+      if (baseGltf.visible) {
+        baseGltf.visible = false
+        world.three.notifyChanged(baseGltf)
+      }
+    }
+    if (activo) {
+      activo.visible = visible
+      activo.scale.set(s, s, s)
+      world.three.notifyChanged(activo)
     }
     return
   }
@@ -289,7 +315,9 @@ ecs.registerComponent({
     const eid = component.eid
     const esc = ecs.Scale.get(world, eid)
     const obj = world.three.entityToObject.get(eid) as any
-    const gltfYaListo = !component.schema.esGltf || Boolean(obj?.userData?.gltf)
+    const gltfYaListo = !component.schema.esGltf
+      || Boolean(obj?.userData?.gltf)
+      || Boolean(obj?.userData?.ageLodChild)
 
     const st: EstadoCubo = {
       raizCubo: null,
@@ -312,10 +340,13 @@ ecs.registerComponent({
       const onGltf = () => {
         st.gltfListo = true
         const actual = world.three.entityToObject.get(eid) as any
-        const gltfScene = actual?.userData?.gltf?.scene
-        if (gltfScene && st.fase !== 'revelando' && st.fase !== 'terminado') {
-          gltfScene.visible = false
-          world.three.notifyChanged(gltfScene)
+        const {activo, baseGltf} = obtenerModeloActivo(actual)
+        if (baseGltf && activo && baseGltf !== activo) {
+          baseGltf.visible = false
+          world.three.notifyChanged(baseGltf)
+        } else if (baseGltf && st.fase !== 'revelando' && st.fase !== 'terminado') {
+          baseGltf.visible = false
+          world.three.notifyChanged(baseGltf)
         }
       }
       st.onGltfLoaded = onGltf
@@ -419,7 +450,7 @@ ecs.registerComponent({
 
     if (esGltf && !st.gltfListo) {
       const obj = world.three.entityToObject.get(eid) as any
-      if (obj?.userData?.gltf) {
+      if (obj?.userData?.gltf || obj?.userData?.ageLodChild) {
         st.gltfListo = true
       }
     }
@@ -489,6 +520,10 @@ ecs.registerComponent({
       world.events.removeListener(eid, ecs.events.VIDEO_CAN_PLAY_THROUGH, st.onVideoReady)
     }
     aplicarVisibilidadYEscala(world, eid, st.esGltf, true, 1, st.baseScale)
+    const obj = world.three.entityToObject.get(eid) as any
+    if (obj?.userData?.inreReveal) {
+      delete obj.userData.inreReveal
+    }
     destruirCubo(world, st)
     estados.delete(eid)
   },

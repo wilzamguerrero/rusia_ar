@@ -581,12 +581,12 @@
       "material": {
         "type": "basic",
         "color": "#ffffff",
-        "roughness": 0.85,
-        "metalness": 0,
         "textureSrc": {
           "type": "asset",
           "asset": "assets/texture_pbr_20250901.png"
         },
+        "roughness": 0.85,
+        "metalness": 0,
         "repeatY": 1,
         "inreMaterial": "texture_pbr_20250901"
       },

@@ -1,8 +1,8 @@
 import * as ecs from '@8thwall/ecs'
-import marcador0 from '../image-targets/e2_marcador.json'
-import marcador1 from '../image-targets/e1_marcador.json'
-import marcador2 from '../image-targets/2026111403501386_d23ed4a3c1c4a4ae1c11cbffb4a276a3.json'
-import marcador3 from '../image-targets/cube1.json'
+import marcador0 from '../image-targets/2026111403501386_d23ed4a3c1c4a4ae1c11cbffb4a276a3.json'
+import marcador1 from '../image-targets/cube1.json'
+import marcador2 from '../image-targets/e1_marcador.json'
+import marcador3 from '../image-targets/e2_marcador.json'
 
 /**
  * Carga los marcadores de imagen en el motor, y se queda vigilando que sigan puestos.

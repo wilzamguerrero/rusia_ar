@@ -41,6 +41,8 @@ interface EntityLodState {
   baseDir: string
   cache: Map<number, CachedLod>
   inFlight: Set<number>
+  /** Nivel que ya carga nativamente `gltf-system` (evita descargar/duplicar el LOD inicial). */
+  baseLevel: number | null
   activeLevel: number
   lastSwitchAt: number
   emaFrameMs: number
@@ -164,6 +166,69 @@ const evictCacheIfNeeded = (state: EntityLodState) => {
   }
 }
 
+const isHiddenInHierarchy = (world: any, eid: ecs.Eid): boolean => {
+  let cur: ecs.Eid = eid
+  for (let i = 0; i < 32 && cur; i += 1) {
+    if (ecs.Hidden?.has?.(world, cur)) return true
+    const obj = world.three.entityToObject.get(cur)
+    if (obj && !obj.visible) return true
+    const parent = world.getParent(cur)
+    if (!parent || parent === cur) break
+    cur = parent
+  }
+  return false
+}
+
+const syncBaseGltfVisibility = (world: any, root: any, showBase: boolean) => {
+  const reveal = root.userData?.inreReveal
+  for (const child of root.children) {
+    if (child && child.userData && child.userData.gltf === true && !child.userData.ageLod) {
+      const targetVisible = showBase ? (reveal ? !!reveal.visible : true) : false
+      if (child.visible !== targetVisible) {
+        child.visible = targetVisible
+        if (typeof world.three?.notifyChanged === 'function') {
+          world.three.notifyChanged(child)
+        }
+      }
+      if (targetVisible && reveal) {
+        const s = Math.max(0.001, reveal.scale || 1)
+        if (child.scale.x !== s || child.scale.y !== s || child.scale.z !== s) {
+          child.scale.set(s, s, s)
+          if (typeof world.three?.notifyChanged === 'function') {
+            world.three.notifyChanged(child)
+          }
+        }
+      }
+    }
+  }
+}
+
+const removeAllAgeLodChildren = (root: any, keep: any = null) => {
+  for (let i = root.children.length - 1; i >= 0; i -= 1) {
+    const child = root.children[i]
+    if (child && child.userData && child.userData.ageLod === true && child !== keep) {
+      root.remove(child)
+    }
+  }
+}
+
+const unmountToBaseLod = (world: any, eid: ecs.Eid, state: EntityLodState, baseLevel: number) => {
+  const root = world.three.entityToObject.get(eid)
+  if (!root) return
+  removeAllAgeLodChildren(root, null)
+  if (root.userData) {
+    root.userData.ageLodChild = null
+    root.userData.ageLodVersion = (root.userData.ageLodVersion || 0) + 1
+  }
+  state.activeChild = null
+  state.activeLevel = baseLevel
+  state.lastSwitchAt = performance.now()
+  syncBaseGltfVisibility(world, root, true)
+  if (typeof world.three?.notifyChanged === 'function') {
+    world.three.notifyChanged(root)
+  }
+}
+
 const mountLod = (world: any, eid: ecs.Eid, state: EntityLodState, entry: CachedLod) => {
   const root = world.three.entityToObject.get(eid)
   if (!root) return
@@ -173,20 +238,19 @@ const mountLod = (world: any, eid: ecs.Eid, state: EntityLodState, entry: Cached
     ? THREE.skeletonClone(entry.scene)
     : entry.scene.clone(true)
 
-  // Ocultar el modelo base de `gltf-system` si ya entró para que no se duplique
-  for (const child of root.children) {
-    if (child.userData && child.userData.gltf === true && !child.userData.ageLod) {
-      child.visible = false
-    }
-  }
+  // Ocultar siempre el modelo base de `gltf-system` y retirar cualquier LOD previo
+  // para garantizar que nunca existan dos mallas visibles simultáneamente.
+  syncBaseGltfVisibility(world, root, false)
+  removeAllAgeLodChildren(root, null)
 
-  if (state.activeChild !== null && state.activeChild.parent === root) {
-    root.remove(state.activeChild)
-    // No llamamos a disposeSubtree(state.activeChild) porque `cloned` comparte
-    // geometría, materiales y texturas con `entry.scene` en `state.cache`.
+  const reveal = root.userData?.inreReveal
+  if (reveal) {
+    cloned.visible = !!reveal.visible
+    const s = Math.max(0.001, reveal.scale || 1)
+    cloned.scale.set(s, s, s)
+  } else {
+    cloned.visible = true
   }
-
-  cloned.visible = true
   cloned.matrixAutoUpdate = true
   cloned.updateMatrix()
   cloned.userData.ageLod = true
@@ -215,8 +279,10 @@ const mountLod = (world: any, eid: ecs.Eid, state: EntityLodState, entry: Cached
   root.add(cloned)
   if (typeof world.three?.notifyChanged === 'function') {
     world.three.notifyChanged(cloned)
+    world.three.notifyChanged(root)
   }
   root.userData = root.userData || {}
+  root.userData.ageLodChild = cloned
   root.userData.ageLodVersion = (root.userData.ageLodVersion || 0) + 1
   state.activeChild = cloned
   state.activeLevel = entry.level
@@ -264,7 +330,7 @@ const requestLod = async (
     state.cache.set(level, entry)
     evictCacheIfNeeded(state)
 
-    if (state.activeChild === null) {
+    if (state.activeChild === null && state.baseLevel === null) {
       mountLod(world, eid, state, entry)
     }
   } catch (err) {
@@ -301,6 +367,7 @@ ecs.registerComponent({
       baseDir,
       cache: new Map(),
       inFlight: new Set(),
+      baseLevel: null,
       activeLevel: 0,
       lastSwitchAt: 0,
       emaFrameMs: 16.67,
@@ -320,11 +387,21 @@ ecs.registerComponent({
         }
         manifest.lods.sort((a, b) => a.level - b.level)
         state.manifest = manifest
+        const needsMeshopt = manifest.streaming?.meshCompression === 'meshopt'
+        // `gltf-system` ya carga nativamente el LOD más ligero (`files[0]` = `recommendedInitialLod`)
+        // salvo cuando se usa compresión meshopt (que el cargador base del motor no decodifica).
+        state.baseLevel = needsMeshopt ? null : manifest.recommendedInitialLod
         const initial = component.schema.mode === 'manual'
           ? component.schema.manualLevel
           : manifest.recommendedInitialLod
-        state.activeLevel = initial
-        void requestLod(world, component.eid, state, initial)
+        state.activeLevel = state.baseLevel !== null ? state.baseLevel : initial
+
+        if (manifest.lods.length <= 1 && state.baseLevel !== null) {
+          return
+        }
+        if (state.baseLevel === null || initial !== state.baseLevel) {
+          void requestLod(world, component.eid, state, initial)
+        }
       })
       .catch(() => {})
   },
@@ -337,16 +414,19 @@ ecs.registerComponent({
     const root = world.three.entityToObject.get(component.eid)
     if (!root) return
 
-    // Mantener oculto el modelo base de `gltf-system` solo cuando ya hay un LOD activo montado
+    // Garantizar invariante de malla única: nunca dejar visibles a la vez el modelo base
+    // de `gltf-system` y un LOD montado (ni restos de LODs anteriores).
     if (state.activeChild !== null) {
-      for (const child of root.children) {
-        if (child.userData && child.userData.gltf === true && !child.userData.ageLod && child.visible) {
-          child.visible = false
-        }
-      }
+      syncBaseGltfVisibility(world, root, false)
+      removeAllAgeLodChildren(root, state.activeChild)
+    } else {
+      removeAllAgeLodChildren(root, null)
     }
 
     if (state.manifest.lods.length <= 1) return
+
+    // No evaluar cobertura ni descargar LODs pesados mientras el marcador/ancestro esté oculto.
+    if (isHiddenInHierarchy(world, component.eid)) return
 
     const dtMs = Math.max(1, Math.min(250, world.time.delta || 16.67))
     state.emaFrameMs = state.frameSamples === 0 ? dtMs : state.emaFrameMs * 0.9 + dtMs * 0.1
@@ -388,9 +468,16 @@ ecs.registerComponent({
     }
 
     if (desired !== state.activeLevel) {
-      const cached = state.cache.get(desired)
       const now = performance.now()
-      if (cached !== undefined && now - state.lastSwitchAt >= 800) {
+      const canSwitch = state.lastSwitchAt === 0 || now - state.lastSwitchAt >= 800
+      if (state.baseLevel !== null && desired === state.baseLevel) {
+        if (canSwitch) {
+          unmountToBaseLod(world, component.eid, state, state.baseLevel)
+        }
+        return
+      }
+      const cached = state.cache.get(desired)
+      if (cached !== undefined && canSwitch) {
         state.lastSwitchAt = now
         mountLod(world, component.eid, state, cached)
       } else if (cached === undefined) {
@@ -405,17 +492,11 @@ ecs.registerComponent({
     state.disposed = true
     const root = world.three.entityToObject.get(component.eid)
     if (root) {
-      if (state.activeChild && state.activeChild.parent === root) {
-        root.remove(state.activeChild)
+      removeAllAgeLodChildren(root, null)
+      if (root.userData) {
+        root.userData.ageLodChild = null
       }
-      for (const child of root.children) {
-        if (child.userData && child.userData.gltf === true && !child.userData.ageLod && !child.visible) {
-          child.visible = true
-          if (typeof world.three?.notifyChanged === 'function') {
-            world.three.notifyChanged(child)
-          }
-        }
-      }
+      syncBaseGltfVisibility(world, root, true)
       if (typeof world.three?.notifyChanged === 'function') {
         world.three.notifyChanged(root)
       }
