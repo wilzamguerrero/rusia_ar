@@ -1,0 +1,989 @@
+{
+  "entrySpaceId": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+  "objects": {
+    "2303416d-2bdd-4969-b763-fd75b9d65804": {
+      "components": {
+        "7f807b3a-d154-4480-8a45-37e42157d52b": {
+          "id": "7f807b3a-d154-4480-8a45-37e42157d52b",
+          "name": "inre-material-modelo",
+          "parameters": {
+            "conservarTexturas": true,
+            "offsetX": 0,
+            "offsetY": 0,
+            "repeatX": 1,
+            "repeatY": 1,
+            "wrap": "repeat"
+          }
+        },
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_Earthquake_82_optim/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_Earthquake_82_optim/lod3.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "2303416d-2bdd-4969-b763-fd75b9d65804",
+      "material": {
+        "type": "basic",
+        "color": "#ffffff",
+        "roughness": 0.53,
+        "metalness": 0
+      },
+      "name": "Earthquake_82_optim",
+      "order": 0.37239957714583005,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        0.058070600032806396,
+        -0.025176554918289185,
+        0.14517845213413239
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "33217bf2-5d77-49ee-b2c4-e7967a2721f7": {
+      "components": {},
+      "geometry": null,
+      "id": "33217bf2-5d77-49ee-b2c4-e7967a2721f7",
+      "light": {
+        "type": "directional",
+        "intensity": 1
+      },
+      "material": null,
+      "name": "Luz direccional",
+      "order": 2.5,
+      "parentId": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+      "position": [
+        20,
+        50,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "381d19e1-f48a-44b7-8734-bcd16986811d": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0.08,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_Eyes/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_Eyes/lod2.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "381d19e1-f48a-44b7-8734-bcd16986811d",
+      "material": null,
+      "name": "Eyes",
+      "order": 1.37239957714583,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        0.010321393609046936,
+        0.8804574012756348,
+        0.06713559664785862
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "3e04eb21-4bce-446f-82e6-b5e969ef280d": {
+      "components": {},
+      "geometry": null,
+      "id": "3e04eb21-4bce-446f-82e6-b5e969ef280d",
+      "imageTarget": {
+        "name": "cube1"
+      },
+      "material": null,
+      "name": "Marcador · cube1",
+      "order": 7.5,
+      "parentId": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "47884b64-5fbf-4b67-a984-2ea326d9c5db": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0.16,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_Teeth/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_Teeth/lod2.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "47884b64-5fbf-4b67-a984-2ea326d9c5db",
+      "material": null,
+      "name": "Teeth",
+      "order": 2.37239957714583,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        0.012123551219701767,
+        0.8181606829166412,
+        0.08427262306213379
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "4aed30e8-e8e4-4112-a328-5b554d24d533": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0.56,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_PM3D_Cylinder3D1/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_PM3D_Cylinder3D1/lod2.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "4aed30e8-e8e4-4112-a328-5b554d24d533",
+      "material": null,
+      "name": "PM3D_Cylinder3D1",
+      "order": 8.37239957714583,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        0,
+        -1.145010769367218,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "4f69ef2b-b466-4216-b8af-b5a2a631edaf": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0.48,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_Belt/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_Belt/lod2.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "4f69ef2b-b466-4216-b8af-b5a2a631edaf",
+      "material": null,
+      "name": "Belt",
+      "order": 6.3723995771458295,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        -0.01980508863925934,
+        -0.24219021177850664,
+        0.1253681480884552
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "505d593a-6d36-4fa2-9aef-3fe1ca208a4a": {
+      "components": {
+        "32739d4f-7d02-4eb3-8a31-f9258b26b01e": {
+          "id": "32739d4f-7d02-4eb3-8a31-f9258b26b01e",
+          "name": "inre-material-modelo",
+          "parameters": {
+            "conservarTexturas": true,
+            "offsetX": 0,
+            "offsetY": 0,
+            "repeatX": 1,
+            "repeatY": 1,
+            "wrap": "repeat"
+          }
+        },
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0.24,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_Kimono/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_Kimono/lod3.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "505d593a-6d36-4fa2-9aef-3fe1ca208a4a",
+      "material": {
+        "type": "basic",
+        "color": "#ffffff",
+        "roughness": 0.56,
+        "metalness": 0
+      },
+      "name": "Kimono",
+      "order": 3.37239957714583,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        0.027796059846878052,
+        0.052761077880859375,
+        0.08781971037387848
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "5bf611ab-2ad4-4dae-8bdb-6be858a0044e": {
+      "components": {},
+      "geometry": null,
+      "id": "5bf611ab-2ad4-4dae-8bdb-6be858a0044e",
+      "imageTarget": {
+        "name": "e2_marcador"
+      },
+      "material": null,
+      "name": "Marcador · e2_marcador",
+      "order": 4.5,
+      "parentId": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "71cbc9e2-2770-4200-adf7-66ce5450cf38": {
+      "camera": {
+        "type": "perspective",
+        "fov": 60,
+        "nearClip": 0.01,
+        "farClip": 1000,
+        "xr": {
+          "xrCameraType": "world",
+          "phone": "AR",
+          "desktop": "disabled",
+          "headset": "disabled",
+          "direction": "back"
+        }
+      },
+      "components": {},
+      "geometry": null,
+      "id": "71cbc9e2-2770-4200-adf7-66ce5450cf38",
+      "material": null,
+      "name": "Cámara",
+      "order": 0.5,
+      "parentId": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "7f07d626-4142-48bc-9091-2c43a0e214ab": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0.4,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_Taping/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_Taping/lod2.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "7f07d626-4142-48bc-9091-2c43a0e214ab",
+      "material": null,
+      "name": "Taping",
+      "order": 5.3723995771458295,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        -0.6881106495857239,
+        0.20179680548608303,
+        0.4597441852092743
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "86bd8d5c-0e0f-4d5d-93da-c18c7aea5e28": {
+      "components": {
+        "29684c02-966c-4598-9078-4c38c4a89543": {
+          "id": "29684c02-966c-4598-9078-4c38c4a89543",
+          "name": "inre-material-modelo",
+          "parameters": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "repeatX": 1,
+            "repeatY": 1,
+            "wrap": "repeat"
+          }
+        },
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.75,
+            "demora": 0.08,
+            "esGltf": true,
+            "esTextura": true,
+            "esVideo": false
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Drunk_Walk.glb"
+        },
+        "animationClip": "mixamo.com",
+        "loop": true
+      },
+      "id": "86bd8d5c-0e0f-4d5d-93da-c18c7aea5e28",
+      "material": {
+        "type": "basic",
+        "color": "#ffffff",
+        "roughness": 0.85,
+        "metalness": 0,
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/texture_pbr_20250901.png"
+        },
+        "repeatY": 1,
+        "inreMaterial": "texture_pbr_20250901"
+      },
+      "name": "Drunk_Walk",
+      "order": 1.666520851222221,
+      "parentId": "cf45fe85-32a8-46ab-8fae-5405e7cab10f",
+      "position": [
+        0.277,
+        -0.124,
+        0
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865475
+      ],
+      "scale": [
+        100,
+        100,
+        100
+      ]
+    },
+    "9908c5f8-51e8-4d53-b900-d650bb8017af": {
+      "components": {},
+      "geometry": null,
+      "id": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "material": null,
+      "name": "v1",
+      "order": 0.8060982480492515,
+      "parentId": "3e04eb21-4bce-446f-82e6-b5e969ef280d",
+      "position": [
+        0,
+        0,
+        0.724
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865475
+      ],
+      "scale": [
+        0.534,
+        0.534,
+        0.534
+      ]
+    },
+    "991eeef5-4e6e-4caa-b98a-9e46ecd2c40b": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.664,
+            "demora": 0,
+            "esGltf": false,
+            "esTextura": true,
+            "esVideo": true
+          }
+        }
+      },
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 0.5625
+      },
+      "id": "991eeef5-4e6e-4caa-b98a-9e46ecd2c40b",
+      "material": {
+        "type": "video",
+        "color": "#ffffff",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/turntable.webm"
+        }
+      },
+      "name": "turntable",
+      "order": 0.7636809272282785,
+      "parentId": "5bf611ab-2ad4-4dae-8bdb-6be858a0044e",
+      "position": [
+        0,
+        0,
+        0.013
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "videoControls": {
+        "loop": true,
+        "paused": false
+      }
+    },
+    "baefaf06-5d1b-4ad5-84c8-5492579e5485": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/7bf71729db3a0b81786ce9b7ad74b3e2.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "baefaf06-5d1b-4ad5-84c8-5492579e5485",
+      "material": null,
+      "name": "7bf71729db3a0b81786ce9b7ad74b3e2",
+      "order": 0.666520851222221,
+      "parentId": "cf45fe85-32a8-46ab-8fae-5405e7cab10f",
+      "position": [
+        -0.316,
+        0,
+        0
+      ],
+      "rotation": [
+        0.7071067811865476,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "bec5db33-0164-4934-82fe-96c2eb6a4874": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.664,
+            "demora": 0,
+            "esGltf": false,
+            "esTextura": true,
+            "esVideo": true
+          }
+        }
+      },
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 0.5625
+      },
+      "id": "bec5db33-0164-4934-82fe-96c2eb6a4874",
+      "material": {
+        "type": "video",
+        "color": "#ffffff",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/e1_video.mp4"
+        }
+      },
+      "name": "e1_video",
+      "order": 0.7149598668814181,
+      "parentId": "e1e829ab-e34d-4e6f-a8d3-c7663a3feaa3",
+      "position": [
+        0,
+        0,
+        0.004
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "videoControls": {
+        "loop": true,
+        "paused": false
+      }
+    },
+    "ccaa16a0-d5fc-4c5c-9201-21bda859c357": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0.32,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_Lace/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_Lace/lod0.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "ccaa16a0-d5fc-4c5c-9201-21bda859c357",
+      "material": null,
+      "name": "Lace",
+      "order": 4.3723995771458295,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        0.09940299391746521,
+        0.18587486818432808,
+        0.36097901314496994
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "cf45fe85-32a8-46ab-8fae-5405e7cab10f": {
+      "components": {},
+      "geometry": null,
+      "id": "cf45fe85-32a8-46ab-8fae-5405e7cab10f",
+      "imageTarget": {
+        "name": "2026111403501386_d23ed4a3c1c4a4ae1c11cbffb4a276a3"
+      },
+      "material": null,
+      "name": "Marcador · 2026111403501386_d23ed4a3c1c4a4ae1c11cbffb4a276a3",
+      "order": 6.5,
+      "parentId": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "e1bb35d6-5d96-487e-a957-bd5659fb1da9": {
+      "components": {},
+      "geometry": null,
+      "id": "e1bb35d6-5d96-487e-a957-bd5659fb1da9",
+      "light": {
+        "type": "ambient"
+      },
+      "material": null,
+      "name": "Luz ambiental",
+      "order": 1.5,
+      "parentId": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+      "position": [
+        10,
+        5,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "e1e829ab-e34d-4e6f-a8d3-c7663a3feaa3": {
+      "components": {},
+      "geometry": null,
+      "id": "e1e829ab-e34d-4e6f-a8d3-c7663a3feaa3",
+      "imageTarget": {
+        "name": "e1_marcador"
+      },
+      "material": null,
+      "name": "Marcador · e1_marcador",
+      "order": 5.5,
+      "parentId": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "e40ea386-0d2a-4ef3-a50c-2b7b48217278": {
+      "components": {
+        "__inre_aparicion__": {
+          "id": "__inre_aparicion__",
+          "name": "inre-aparicion",
+          "parameters": {
+            "cubo": 0.65,
+            "demora": 0.56,
+            "esGltf": true,
+            "esTextura": false,
+            "esVideo": false
+          }
+        },
+        "__inre_lod__": {
+          "id": "__inre_lod__",
+          "name": "inre-lod-adaptativo",
+          "parameters": {
+            "bias": 1,
+            "manifestUrl": "assets/models/v1_Shoes/manifest.json",
+            "manualLevel": 0,
+            "mode": "auto"
+          }
+        }
+      },
+      "geometry": null,
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/models/v1_Shoes/lod3.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "id": "e40ea386-0d2a-4ef3-a50c-2b7b48217278",
+      "material": null,
+      "name": "Shoes",
+      "order": 7.3723995771458295,
+      "parentId": "9908c5f8-51e8-4d53-b900-d650bb8017af",
+      "position": [
+        -0.013311192393302917,
+        -0.7767408788204193,
+        0.004867777228355408
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "spaces": {
+    "f2c467b9-8456-4614-91d8-a16e785ac8d4": {
+      "activeCamera": "71cbc9e2-2770-4200-adf7-66ce5450cf38",
+      "id": "f2c467b9-8456-4614-91d8-a16e785ac8d4",
+      "name": "Espacio principal"
+    }
+  }
+}

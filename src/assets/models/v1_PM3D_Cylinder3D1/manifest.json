@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "modelId": "v1_PM3D_Cylinder3D1",
+  "name": "PM3D_Cylinder3D1",
+  "sourceFormat": "usdz",
+  "bounds": {
+    "min": [
+      -0.9936201572418213,
+      -0.09999996423721313,
+      -0.9936201572418213
+    ],
+    "max": [
+      0.9936201572418213,
+      0.09999996423721313,
+      0.9936201572418213
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "radius": 1.4087448408430703
+  },
+  "analysis": {
+    "vertices": 128737,
+    "triangles": 253952,
+    "materials": 1,
+    "submeshes": 1,
+    "fileBytes": 1544844,
+    "hasUvs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "hasVertexColors": false,
+    "hasVariedVertexColors": false,
+    "textureCount": 0,
+    "textureMaxResolution": 0,
+    "textureTotalBytes": 0,
+    "dimensions": [
+      1.9872403144836426,
+      0.19999992847442627,
+      1.9872403144836426
+    ],
+    "boundingBox": {
+      "min": [
+        -0.9936201572418213,
+        -0.09999996423721313,
+        -0.9936201572418213
+      ],
+      "max": [
+        0.9936201572418213,
+        0.09999996423721313,
+        0.9936201572418213
+      ]
+    },
+    "hasRigging": false,
+    "hasAnimations": false,
+    "hasMorphTargets": false,
+    "estimatedRamBytes": 8711852,
+    "estimatedGpuBytes": 7167008,
+    "issues": [],
+    "needsOptimization": true,
+    "recommendedProfile": "balanced"
+  },
+  "profile": "auto",
+  "lods": [
+    {
+      "level": 0,
+      "path": "lod0.glb",
+      "triangles": 16728,
+      "vertices": 8694,
+      "bytes": 410600,
+      "geometricError": 0.00061,
+      "screenSizeThreshold": 0.44
+    },
+    {
+      "level": 1,
+      "path": "lod1.glb",
+      "triangles": 8180,
+      "vertices": 4413,
+      "bytes": 205280,
+      "geometricError": 0.00122,
+      "screenSizeThreshold": 0.18
+    },
+    {
+      "level": 2,
+      "path": "lod2.glb",
+      "triangles": 4000,
+      "vertices": 2283,
+      "bytes": 103996,
+      "geometricError": 0.0024,
+      "screenSizeThreshold": 0
+    }
+  ],
+  "textures": [],
+  "recommendedInitialLod": 2,
+  "streaming": {
+    "progressive": true,
+    "memoryBudgetMb": 96,
+    "meshCompression": "none",
+    "textureCompression": "webp"
+  },
+  "bakedMaps": {
+    "normal": false,
+    "ao": false,
+    "baseColorFromVertex": false
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "modelId": "v1_Teeth",
+  "name": "Teeth",
+  "sourceFormat": "usdz",
+  "bounds": {
+    "min": [
+      -0.06909719109535217,
+      -0.036700695753097534,
+      -0.04321260750293732
+    ],
+    "max": [
+      0.06909719109535217,
+      0.036700695753097534,
+      0.04321260750293732
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "radius": 0.08937948496848681
+  },
+  "analysis": {
+    "vertices": 66338,
+    "triangles": 124928,
+    "materials": 1,
+    "submeshes": 1,
+    "fileBytes": 796056,
+    "hasUvs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "hasVertexColors": true,
+    "hasVariedVertexColors": true,
+    "textureCount": 0,
+    "textureMaxResolution": 0,
+    "textureTotalBytes": 0,
+    "dimensions": [
+      0.13819438219070435,
+      0.07340139150619507,
+      0.08642521500587463
+    ],
+    "boundingBox": {
+      "min": [
+        -0.06909719109535217,
+        -0.036700695753097534,
+        -0.04321260750293732
+      ],
+      "max": [
+        0.06909719109535217,
+        0.036700695753097534,
+        0.04321260750293732
+      ]
+    },
+    "hasRigging": false,
+    "hasAnimations": false,
+    "hasMorphTargets": false,
+    "estimatedRamBytes": 5479416,
+    "estimatedGpuBytes": 4683360,
+    "issues": [],
+    "needsOptimization": true,
+    "recommendedProfile": "balanced"
+  },
+  "profile": "auto",
+  "lods": [
+    {
+      "level": 0,
+      "path": "lod0.glb",
+      "triangles": 14000,
+      "vertices": 8092,
+      "bytes": 492868,
+      "geometricError": 0.00024,
+      "screenSizeThreshold": 0.44
+    },
+    {
+      "level": 1,
+      "path": "lod1.glb",
+      "triangles": 7000,
+      "vertices": 4273,
+      "bytes": 256108,
+      "geometricError": 0.00076,
+      "screenSizeThreshold": 0.18
+    },
+    {
+      "level": 2,
+      "path": "lod2.glb",
+      "triangles": 3500,
+      "vertices": 2297,
+      "bytes": 135064,
+      "geometricError": 0.00184,
+      "screenSizeThreshold": 0
+    }
+  ],
+  "textures": [],
+  "recommendedInitialLod": 2,
+  "streaming": {
+    "progressive": true,
+    "memoryBudgetMb": 96,
+    "meshCompression": "none",
+    "textureCompression": "webp"
+  },
+  "bakedMaps": {
+    "normal": false,
+    "ao": false,
+    "baseColorFromVertex": false
+  }
+}

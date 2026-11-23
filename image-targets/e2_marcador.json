@@ -1,0 +1,27 @@
+{
+  "imagePath": "image-targets/e2_marcador_luminance.png",
+  "resources": {
+    "originalImage": "e2_marcador_original.png",
+    "croppedImage": "e2_marcador_cropped.png",
+    "thumbnailImage": "e2_marcador_thumbnail.png",
+    "luminanceImage": "e2_marcador_luminance.png"
+  },
+  "name": "e2_marcador",
+  "type": "PLANAR",
+  "metadata": null,
+  "moveable": false,
+  "physicalWidthInMeters": null,
+  "properties": {
+    "top": 88,
+    "left": 0,
+    "width": 398,
+    "height": 531,
+    "isRotated": true,
+    "originalWidth": 398,
+    "originalHeight": 707
+  },
+  "userMetadataIsJson": true,
+  "loadAutomatically": true,
+  "created": 1795456818565,
+  "updated": 1795456818565
+}

@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "modelId": "v1_Earthquake_82_optim",
+  "name": "Earthquake_82_optim",
+  "sourceFormat": "usdz",
+  "bounds": {
+    "min": [
+      -0.8778442740440369,
+      -1.0201860666275024,
+      -0.6054992079734802
+    ],
+    "max": [
+      0.8780093789100647,
+      1.020151972770691,
+      0.6053022742271423
+    ],
+    "center": [
+      0.00008255243301391602,
+      -0.00001704692840576172,
+      -0.00009846687316894531
+    ],
+    "radius": 1.4758083882153157
+  },
+  "analysis": {
+    "vertices": 1246881,
+    "triangles": 2483200,
+    "materials": 1,
+    "submeshes": 1,
+    "fileBytes": 14962572,
+    "hasUvs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "hasVertexColors": true,
+    "hasVariedVertexColors": true,
+    "textureCount": 0,
+    "textureMaxResolution": 0,
+    "textureTotalBytes": 0,
+    "dimensions": [
+      1.7558536529541016,
+      2.0403380393981934,
+      1.2108014822006226
+    ],
+    "boundingBox": {
+      "min": [
+        -0.8778442740440369,
+        -1.0201860666275024,
+        -0.6054992079734802
+      ],
+      "max": [
+        0.8780093789100647,
+        1.020151972770691,
+        0.6053022742271423
+      ]
+    },
+    "hasRigging": false,
+    "hasAnimations": false,
+    "hasMorphTargets": false,
+    "estimatedRamBytes": 104611260,
+    "estimatedGpuBytes": 89648688,
+    "issues": [
+      {
+        "code": "high-poly",
+        "severity": "warn",
+        "message": "Alta densidad (2.483.200 triángulos). Se recomienda generar LODs adaptativos."
+      }
+    ],
+    "needsOptimization": true,
+    "recommendedProfile": "balanced"
+  },
+  "profile": "auto",
+  "lods": [
+    {
+      "level": 0,
+      "path": "lod0.glb",
+      "triangles": 163586,
+      "vertices": 83002,
+      "bytes": 5284384,
+      "geometricError": 0.00062,
+      "screenSizeThreshold": 0.56
+    },
+    {
+      "level": 1,
+      "path": "lod1.glb",
+      "triangles": 47480,
+      "vertices": 24421,
+      "bytes": 1547868,
+      "geometricError": 0.00216,
+      "screenSizeThreshold": 0.32
+    },
+    {
+      "level": 2,
+      "path": "lod2.glb",
+      "triangles": 13780,
+      "vertices": 7270,
+      "bytes": 457424,
+      "geometricError": 0.00696,
+      "screenSizeThreshold": 0.16
+    },
+    {
+      "level": 3,
+      "path": "lod3.glb",
+      "triangles": 4000,
+      "vertices": 2201,
+      "bytes": 137296,
+      "geometricError": 0.02288,
+      "screenSizeThreshold": 0
+    }
+  ],
+  "textures": [],
+  "recommendedInitialLod": 3,
+  "streaming": {
+    "progressive": true,
+    "memoryBudgetMb": 96,
+    "meshCompression": "none",
+    "textureCompression": "webp"
+  },
+  "bakedMaps": {
+    "normal": false,
+    "ao": false,
+    "baseColorFromVertex": false
+  }
+}

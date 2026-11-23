@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "modelId": "v1_Kimono",
+  "name": "Kimono",
+  "sourceFormat": "usdz",
+  "bounds": {
+    "min": [
+      -0.49520671367645264,
+      -0.8141640424728394,
+      -0.40011101961135864
+    ],
+    "max": [
+      0.49467363953590393,
+      0.8141435384750366,
+      0.3998819589614868
+    ],
+    "center": [
+      -0.00026653707027435303,
+      -0.000010251998901367188,
+      -0.00011453032493591309
+    ],
+    "radius": 1.03334861707146
+  },
+  "analysis": {
+    "vertices": 968952,
+    "triangles": 1937920,
+    "materials": 1,
+    "submeshes": 1,
+    "fileBytes": 11627424,
+    "hasUvs": false,
+    "hasNormals": true,
+    "hasTangents": false,
+    "hasVertexColors": true,
+    "hasVariedVertexColors": true,
+    "textureCount": 0,
+    "textureMaxResolution": 0,
+    "textureTotalBytes": 0,
+    "dimensions": [
+      0.9898803532123566,
+      1.628307580947876,
+      0.7999929785728455
+    ],
+    "boundingBox": {
+      "min": [
+        -0.49520671367645264,
+        -0.8141640424728394,
+        -0.40011101961135864
+      ],
+      "max": [
+        0.49467363953590393,
+        0.8141435384750366,
+        0.3998819589614868
+      ]
+    },
+    "hasRigging": false,
+    "hasAnimations": false,
+    "hasMorphTargets": false,
+    "estimatedRamBytes": 73640544,
+    "estimatedGpuBytes": 62013120,
+    "issues": [
+      {
+        "code": "no-uvs",
+        "severity": "info",
+        "message": "Sin UVs (Polypaint / color por vértice detectado). Se puede generar UV automática y hornear textura."
+      },
+      {
+        "code": "high-poly",
+        "severity": "warn",
+        "message": "Alta densidad (1.937.920 triángulos). Se recomienda generar LODs adaptativos."
+      }
+    ],
+    "needsOptimization": true,
+    "recommendedProfile": "balanced"
+  },
+  "profile": "auto",
+  "lods": [
+    {
+      "level": 0,
+      "path": "lod0.glb",
+      "triangles": 127666,
+      "vertices": 83011,
+      "bytes": 4335048,
+      "geometricError": 0.00072,
+      "screenSizeThreshold": 0.56
+    },
+    {
+      "level": 1,
+      "path": "lod1.glb",
+      "triangles": 40246,
+      "vertices": 34484,
+      "bytes": 1733144,
+      "geometricError": 0.00245,
+      "screenSizeThreshold": 0.32
+    },
+    {
+      "level": 2,
+      "path": "lod2.glb",
+      "triangles": 12688,
+      "vertices": 12742,
+      "bytes": 706700,
+      "geometricError": 0.00938,
+      "screenSizeThreshold": 0.16
+    },
+    {
+      "level": 3,
+      "path": "lod3.glb",
+      "triangles": 4020,
+      "vertices": 5655,
+      "bytes": 375896,
+      "geometricError": 0.4269,
+      "screenSizeThreshold": 0
+    }
+  ],
+  "textures": [],
+  "recommendedInitialLod": 3,
+  "streaming": {
+    "progressive": true,
+    "memoryBudgetMb": 96,
+    "meshCompression": "none",
+    "textureCompression": "webp"
+  },
+  "bakedMaps": {
+    "normal": false,
+    "ao": false,
+    "baseColorFromVertex": true
+  }
+}

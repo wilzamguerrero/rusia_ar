@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "modelId": "v1_Lace",
+  "name": "Lace",
+  "sourceFormat": "usdz",
+  "bounds": {
+    "min": [
+      -0.45059826970100403,
+      -0.08811147511005402,
+      -0.14384442567825317
+    ],
+    "max": [
+      0.45059826970100403,
+      0.08811147511005402,
+      0.14384442567825317
+    ],
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "radius": 0.48113787161510674
+  },
+  "analysis": {
+    "vertices": 2670,
+    "triangles": 4480,
+    "materials": 1,
+    "submeshes": 1,
+    "fileBytes": 32040,
+    "hasUvs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "hasVertexColors": false,
+    "hasVariedVertexColors": false,
+    "textureCount": 0,
+    "textureMaxResolution": 0,
+    "textureTotalBytes": 0,
+    "dimensions": [
+      0.9011965394020081,
+      0.17622295022010803,
+      0.28768885135650635
+    ],
+    "boundingBox": {
+      "min": [
+        -0.45059826970100403,
+        -0.08811147511005402,
+        -0.14384442567825317
+      ],
+      "max": [
+        0.45059826970100403,
+        0.08811147511005402,
+        0.14384442567825317
+      ]
+    },
+    "hasRigging": false,
+    "hasAnimations": false,
+    "hasMorphTargets": false,
+    "estimatedRamBytes": 171240,
+    "estimatedGpuBytes": 139200,
+    "issues": [],
+    "needsOptimization": false,
+    "recommendedProfile": "none"
+  },
+  "profile": "auto",
+  "lods": [
+    {
+      "level": 0,
+      "path": "lod0.glb",
+      "triangles": 4480,
+      "vertices": 2670,
+      "bytes": 118984,
+      "geometricError": 0,
+      "screenSizeThreshold": 0
+    }
+  ],
+  "textures": [],
+  "recommendedInitialLod": 0,
+  "streaming": {
+    "progressive": false,
+    "memoryBudgetMb": 256,
+    "meshCompression": "none",
+    "textureCompression": "webp"
+  },
+  "bakedMaps": {
+    "normal": false,
+    "ao": false,
+    "baseColorFromVertex": false
+  }
+}

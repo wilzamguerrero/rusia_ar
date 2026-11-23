@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "modelId": "v1_Shoes",
+  "name": "Shoes",
+  "sourceFormat": "usdz",
+  "bounds": {
+    "min": [
+      -0.27939385175704956,
+      -0.2747134268283844,
+      -0.3205386996269226
+    ],
+    "max": [
+      0.27947306632995605,
+      0.27469107508659363,
+      0.3205114006996155
+    ],
+    "center": [
+      0.00003960728645324707,
+      -0.000011175870895385742,
+      -0.000013649463653564453
+    ],
+    "radius": 0.5062417332621781
+  },
+  "analysis": {
+    "vertices": 525316,
+    "triangles": 1050624,
+    "materials": 1,
+    "submeshes": 1,
+    "fileBytes": 6303792,
+    "hasUvs": false,
+    "hasNormals": true,
+    "hasTangents": false,
+    "hasVertexColors": true,
+    "hasVariedVertexColors": true,
+    "textureCount": 0,
+    "textureMaxResolution": 0,
+    "textureTotalBytes": 0,
+    "dimensions": [
+      0.5588669180870056,
+      0.549404501914978,
+      0.6410501003265381
+    ],
+    "boundingBox": {
+      "min": [
+        -0.27939385175704956,
+        -0.2747134268283844,
+        -0.3205386996269226
+      ],
+      "max": [
+        0.27947306632995605,
+        0.27469107508659363,
+        0.3205114006996155
+      ]
+    },
+    "hasRigging": false,
+    "hasAnimations": false,
+    "hasMorphTargets": false,
+    "estimatedRamBytes": 39923920,
+    "estimatedGpuBytes": 33620128,
+    "issues": [
+      {
+        "code": "no-uvs",
+        "severity": "info",
+        "message": "Sin UVs (Polypaint / color por vértice detectado). Se puede generar UV automática y hornear textura."
+      },
+      {
+        "code": "high-poly",
+        "severity": "warn",
+        "message": "Alta densidad (1.050.624 triángulos). Se recomienda generar LODs adaptativos."
+      }
+    ],
+    "needsOptimization": true,
+    "recommendedProfile": "balanced"
+  },
+  "profile": "auto",
+  "lods": [
+    {
+      "level": 0,
+      "path": "lod0.glb",
+      "triangles": 69212,
+      "vertices": 44142,
+      "bytes": 2266068,
+      "geometricError": 0.00025,
+      "screenSizeThreshold": 0.56
+    },
+    {
+      "level": 1,
+      "path": "lod1.glb",
+      "triangles": 26760,
+      "vertices": 20541,
+      "bytes": 1001408,
+      "geometricError": 0.00098,
+      "screenSizeThreshold": 0.32
+    },
+    {
+      "level": 2,
+      "path": "lod2.glb",
+      "triangles": 10346,
+      "vertices": 9151,
+      "bytes": 439956,
+      "geometricError": 0.00324,
+      "screenSizeThreshold": 0.16
+    },
+    {
+      "level": 3,
+      "path": "lod3.glb",
+      "triangles": 4000,
+      "vertices": 3916,
+      "bytes": 196280,
+      "geometricError": 0.01051,
+      "screenSizeThreshold": 0
+    }
+  ],
+  "textures": [],
+  "recommendedInitialLod": 3,
+  "streaming": {
+    "progressive": true,
+    "memoryBudgetMb": 96,
+    "meshCompression": "none",
+    "textureCompression": "webp"
+  },
+  "bakedMaps": {
+    "normal": false,
+    "ao": false,
+    "baseColorFromVertex": true
+  }
+}
